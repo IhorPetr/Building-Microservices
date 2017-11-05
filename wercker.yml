@@ -54,11 +54,11 @@ build:
           cp -r . $WERCKER_OUTPUT_DIR/app
 deploy:  
   steps:    
-    - internal/docker-push:        
+    - internal/docker-push:
+        cwd: $WERCKER_OUTPUT_DIR/app
         username: $USERNAME        
         password: $PASSWORD 
         tag: latest
         repository: ihorpetr/microservtest        
         registry: https://registry.hub.docker.com
-        cmd: chmod +x /pipeline/source/app/docker_entrypoint.sh
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh" 
