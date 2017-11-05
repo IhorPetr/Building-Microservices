@@ -3,22 +3,55 @@ no-response-timeout: 10
 build:  
   steps:     
     - script:        
-        name: restore        
+        name: restore
+        cwd: src/StatlerWaldorfCorp.TeamService        
         code: |          
           dotnet restore    
     - script:        
-        name: build        
+        name: build
+        cwd: src/StatlerWaldorfCorp.TeamService        
         code: |          
           dotnet build    
     - script:        
-        name: publish        
+        name: publish
+        cwd: src/StatlerWaldorfCorp.TeamService        
         code: |          
           dotnet publish -o publish
+    - script:        
+        name: test-restore        
+        cwd: test/StatlerWaldorfCorp.TeamService.Tests        
+        code: |           
+          dotnet restore    
+    - script:        
+        name: test-build        
+        cwd: test/StatlerWaldorfCorp.TeamService.Tests        
+        code: |          
+          dotnet build     
+    - script:        
+        name: test-run        
+        cwd: test/StatlerWaldorfCorp.TeamService.Tests        
+        code: |          
+          dotnet test
+    - script:    
+        name: integration-test-restore    
+        cwd: test/StatlerWaldorfCorp.TeamService.Tests.Integration    
+        code: |      
+          dotnet restore 
+    - script:    
+        name: integration-test-build    
+        cwd: test/StatlerWaldorfCorp.TeamService.Tests.Integration    
+        code: |      
+          dotnet build 
+    - script:    
+        name: integration-test-run    
+        cwd: test/StatlerWaldorfCorp.TeamService.Tests.Integration     
+        code: |      
+          dotnet test
     - script:
         name: copy binary
+        cwd: src/StatlerWaldorfCorp.TeamService
         code: |
           cp -r . $WERCKER_OUTPUT_DIR/app
-          cd $WERCKER_OUTPUT_DIR/app
 deploy:  
   steps:    
     - internal/docker-push:        
