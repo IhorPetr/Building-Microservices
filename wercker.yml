@@ -60,4 +60,4 @@ deploy:
         tag: latest
         repository: ihorpetr/microservtest        
         registry: https://registry.hub.docker.com        
-        entrypoint: "dotnet MicroserviceProject.dll" 
+        entrypoint: "dotnet StatlerWaldorfCorp.TeamService.dll" 
