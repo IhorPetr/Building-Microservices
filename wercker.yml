@@ -59,5 +59,6 @@ deploy:
         password: $PASSWORD 
         tag: latest
         repository: ihorpetr/microservtest        
-        registry: https://registry.hub.docker.com        
+        registry: https://registry.hub.docker.com
+        cmd: chmod +x /pipeline/source/app/docker_entrypoint.sh
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh" 
