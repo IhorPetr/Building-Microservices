@@ -44,7 +44,7 @@ namespace StatlerWaldorfCorp.TeamService.Tests.Integration.RESTHttpTest
 
             List<Team> teams = JsonConvert.DeserializeObject<List<Team>>(raw);
 
-            Assert.Equal(1, teams.Count);
+            Assert.Equal(2, teams.Count);
             Assert.Equal("Barselona", teams[0].Name);
             Assert.Equal(teamFootball.ID, teams[0].ID);
         }

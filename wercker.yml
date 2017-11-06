@@ -64,6 +64,5 @@ deploy:
         password: $PASSWORD 
         tag: latest
         repository: ihorpetr/microservtest
-        cmd: nginx -g 'daemon off;'
         registry: https://registry.hub.docker.com
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh" 
