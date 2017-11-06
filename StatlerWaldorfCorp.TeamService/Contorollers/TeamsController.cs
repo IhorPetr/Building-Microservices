@@ -22,7 +22,20 @@ namespace StatlerWaldorfCorp.TeamService.Contorollers
         [HttpGet]
         public  virtual IEnumerable<Team> GetAllTeams()
         {
-            return repository.GetTeams();
+            var createTest = new List<Team>
+            {
+                new Team
+                {
+                    ID = new Guid(),
+                    Name = "Barselona"
+                },
+                new Team
+                {
+                    ID = new Guid(),
+                    Name = "Manchster United"
+                }
+            };
+            return createTest;
         }
         [HttpPost]
         public virtual IActionResult CreateTeam([FromBody]Team newTeam)
