@@ -57,7 +57,7 @@ deploy:
     - script:
         name: enable 
         code : |
-        chmod +x /pipeline/source/app/docker_entrypoint.sh
+          chmod +x /pipeline/source/app/docker_entrypoint.sh
     - internal/docker-push:
         cwd: $WERCKER_OUTPUT_DIR/app
         username: $USERNAME        
