@@ -63,6 +63,6 @@ deploy:
         username: $USERNAME        
         password: $PASSWORD 
         tag: teamservice
-        repository: ihorpetr/microservtest
+        repository: ihorpetr/microservicetest
         registry: https://registry.hub.docker.com
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh" 
