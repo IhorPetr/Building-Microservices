@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C6B55281-E6A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{61C7AEFA-F855-4258-B9A8-62EE5DD49C58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatlerWaldorfCorp.TeamService.Tests", "StatlerWaldorfCorp.TeamService.Tests\StatlerWaldorfCorp.TeamService.Tests.csproj", "{4DDE8E3E-9A58-4152-9E9A-B804B76DF7D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.LocationService.Tests", "StatlerWaldorfCorp.TeamService.Tests\StatlerWaldorfCorp.LocationService.Tests.csproj", "{4DDE8E3E-9A58-4152-9E9A-B804B76DF7D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatlerWaldorfCorp.TeamService", "StatlerWaldorfCorp.TeamService\StatlerWaldorfCorp.TeamService.csproj", "{6825A85C-713F-4CD4-A4C2-D538324C6AD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.LocationService", "StatlerWaldorfCorp.TeamService\StatlerWaldorfCorp.LocationService.csproj", "{6825A85C-713F-4CD4-A4C2-D538324C6AD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatlerWaldorfCorp.TeamService.Tests.Integration", "StatlerWaldorfCorp.TeamService.Tests.Integration\StatlerWaldorfCorp.TeamService.Tests.Integration.csproj", "{8E9A490D-47C5-4BF8-A535-EBC15C7816E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.LocationService.Tests.Integration", "StatlerWaldorfCorp.TeamService.Tests.Integration\StatlerWaldorfCorp.LocationService.Tests.Integration.csproj", "{8E9A490D-47C5-4BF8-A535-EBC15C7816E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
