@@ -25,6 +25,11 @@ namespace StatlerWaldorfCorp.TeamService.Repository
         }
         public IEnumerable<Team> GetTeams() => teams;
 
+        public Team Get(Guid id)
+        {
+            return teams.FirstOrDefault(t => t.ID == id);
+
+        }
         public void AddTeam(Team t)
         {
             teams.Add(t);
