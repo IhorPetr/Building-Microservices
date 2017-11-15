@@ -7,11 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C6B55281-E6A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{61C7AEFA-F855-4258-B9A8-62EE5DD49C58}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.LocationService.Tests", "StatlerWaldorfCorp.TeamService.Tests\StatlerWaldorfCorp.LocationService.Tests.csproj", "{4DDE8E3E-9A58-4152-9E9A-B804B76DF7D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatlerWaldorfCorp.LocationService", "StatlerWaldorfCorp.LocationService\StatlerWaldorfCorp.LocationService.csproj", "{06C273F2-22C1-4A53-8DC5-5F2AAD381A97}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.LocationService", "StatlerWaldorfCorp.TeamService\StatlerWaldorfCorp.LocationService.csproj", "{6825A85C-713F-4CD4-A4C2-D538324C6AD5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.LocationService.Tests.Integration", "StatlerWaldorfCorp.TeamService.Tests.Integration\StatlerWaldorfCorp.LocationService.Tests.Integration.csproj", "{8E9A490D-47C5-4BF8-A535-EBC15C7816E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatlerWaldorfCorp.LocationService.Tests", "StatlerWaldorfCorp.LocationService.Tests\StatlerWaldorfCorp.LocationService.Tests.csproj", "{6681146F-2D04-4ECC-BF27-6F49D1D06FCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,26 +17,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4DDE8E3E-9A58-4152-9E9A-B804B76DF7D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DDE8E3E-9A58-4152-9E9A-B804B76DF7D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DDE8E3E-9A58-4152-9E9A-B804B76DF7D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DDE8E3E-9A58-4152-9E9A-B804B76DF7D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6825A85C-713F-4CD4-A4C2-D538324C6AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6825A85C-713F-4CD4-A4C2-D538324C6AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6825A85C-713F-4CD4-A4C2-D538324C6AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6825A85C-713F-4CD4-A4C2-D538324C6AD5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E9A490D-47C5-4BF8-A535-EBC15C7816E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E9A490D-47C5-4BF8-A535-EBC15C7816E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E9A490D-47C5-4BF8-A535-EBC15C7816E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E9A490D-47C5-4BF8-A535-EBC15C7816E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C273F2-22C1-4A53-8DC5-5F2AAD381A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C273F2-22C1-4A53-8DC5-5F2AAD381A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C273F2-22C1-4A53-8DC5-5F2AAD381A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C273F2-22C1-4A53-8DC5-5F2AAD381A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6681146F-2D04-4ECC-BF27-6F49D1D06FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6681146F-2D04-4ECC-BF27-6F49D1D06FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6681146F-2D04-4ECC-BF27-6F49D1D06FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6681146F-2D04-4ECC-BF27-6F49D1D06FCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{4DDE8E3E-9A58-4152-9E9A-B804B76DF7D4} = {61C7AEFA-F855-4258-B9A8-62EE5DD49C58}
-		{6825A85C-713F-4CD4-A4C2-D538324C6AD5} = {C6B55281-E6AE-4C80-BC6A-AC7ECF17993E}
-		{8E9A490D-47C5-4BF8-A535-EBC15C7816E0} = {61C7AEFA-F855-4258-B9A8-62EE5DD49C58}
+		{06C273F2-22C1-4A53-8DC5-5F2AAD381A97} = {C6B55281-E6AE-4C80-BC6A-AC7ECF17993E}
+		{6681146F-2D04-4ECC-BF27-6F49D1D06FCB} = {61C7AEFA-F855-4258-B9A8-62EE5DD49C58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44AE6EFF-9F5A-4373-9689-CCF9E736BD3C}

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace StatlerWaldorfCorp.TeamService
+namespace StatlerWaldorfCorp.LocationService
 {
     public class Program
     {
@@ -20,7 +20,6 @@ namespace StatlerWaldorfCorp.TeamService
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls("http://0.0.0.0:8080")
                 .Build();
     }
 }
