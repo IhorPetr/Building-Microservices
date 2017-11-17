@@ -5,18 +5,40 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MySql.Data.EntityFrameworkCore.Extensions;
+using StatlerWaldorfCorp.LocationService.DatabaseInfrastructure;
+using StatlerWaldorfCorp.LocationService.Persistence;
+using StatlerWaldorfCorp.LocationService.Repository;
 
 namespace StatlerWaldorfCorp.LocationService
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public Startup(IHostingEnvironment env)
         {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true)
+                .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
         }
 
+        // This method gets called by the runtime. Use this method to add services to the container.
+            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public void ConfigureServices(IServiceCollection services)
+        {
+            var connectionString = Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
+            services.AddEntityFrameworkMySQL().AddDbContext<LocationDbContext>(option=>
+            option.UseMySQL(connectionString));
+            services.AddScoped<ILocationRecordRepository, LocationRecordRepository>();
+            services.AddMvc();
+        }
+
+        public static IConfigurationRoot Configuration { get; set; }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -24,11 +46,7 @@ namespace StatlerWaldorfCorp.LocationService
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseMvc();
         }
     }
 }

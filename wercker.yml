@@ -4,32 +4,32 @@ build:
   steps:     
     - script:        
         name: restore
-        cwd: StatlerWaldorfCorp.TeamService        
+        cwd: StatlerWaldorfCorp.LocationService        
         code: |          
           dotnet restore    
     - script:        
         name: build
-        cwd: StatlerWaldorfCorp.TeamService        
+        cwd: StatlerWaldorfCorp.LocationService        
         code: |          
           dotnet build    
     - script:        
         name: publish
-        cwd: StatlerWaldorfCorp.TeamService        
+        cwd: StatlerWaldorfCorp.LocationService        
         code: |          
           dotnet publish -o publish
     - script:        
         name: test-restore        
-        cwd: StatlerWaldorfCorp.TeamService.Tests        
+        cwd: StatlerWaldorfCorp.LocationService.Tests        
         code: |           
           dotnet restore    
     - script:        
         name: test-build        
-        cwd: StatlerWaldorfCorp.TeamService.Tests        
+        cwd: StatlerWaldorfCorp.LocationService.Tests        
         code: |          
           dotnet build     
     - script:        
         name: test-run        
-        cwd: StatlerWaldorfCorp.TeamService.Tests        
+        cwd: StatlerWaldorfCorp.LocationService.Tests        
         code: |          
           dotnet test
     - script:    
