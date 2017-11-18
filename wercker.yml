@@ -51,6 +51,13 @@ testIntegration:
         cwd: StatlerWaldorfCorp.TeamService.Tests.Integration     
         code: |      
           dotnet test
+Packaging:
+  steps:
+    - script:
+        name: copy binary
+        cwd: StatlerWaldorfCorp.TeamService
+        code: |
+          cp -r . $WERCKER_OUTPUT_DIR/app
 deploy:  
   steps:
     - script:
