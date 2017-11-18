@@ -51,11 +51,6 @@ testIntegration:
         cwd: StatlerWaldorfCorp.TeamService.Tests.Integration     
         code: |      
           dotnet test
-status-wait:
-   steps:
-      - maestrohealthcaretechnologies/wait-github-statuses
-          status_contexts: wercker/testUnit,wercker/testIntegration
-          timeout: 10
 deploy:  
   steps:
     - script:
