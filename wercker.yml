@@ -42,6 +42,11 @@ testUnit:
           dotnet test
 testIntegration:
   steps:
+    - script:
+        name: integration-migrate
+        cwd: src/StatlerWaldorfCorp.LocationService
+        code: |           
+           dotnet ef database update
     - script:    
         name: integration-test-restore    
         cwd: StatlerWaldorfCorp.LocationService.Integration    
@@ -57,13 +62,14 @@ testIntegration:
         cwd: StatlerWaldorfCorp.LocationService.Integration     
         code: |      
           dotnet test
-deploy:  
+Packaging
   steps:
     - script:
         name: copy binary
-        cwd: StatlerWaldorfCorp.TeamService
+        cwd: StatlerWaldorfCorp.LocationService
         code: |
           cp -r . $WERCKER_OUTPUT_DIR/app
+deploy:  
     - script:
         name: enable 
         code : |
