@@ -53,9 +53,9 @@ testIntegration:
           dotnet test
 status-wait:
   steps:
-    - IhorPetr/Building-Microservices
-        status_contexts: wercker/build,wercker/testUnit,wercker/testIntegration
-        timeout: 10
+   - IhorPetr/Building-Microservices
+      status_contexts: wercker/build,wercker/testUnit,wercker/testIntegration
+      timeout: 10
 deploy:  
   steps:
     - script:
