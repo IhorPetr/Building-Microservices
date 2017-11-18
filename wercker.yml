@@ -51,13 +51,13 @@ testIntegration:
         cwd: StatlerWaldorfCorp.TeamService.Tests.Integration     
         code: |      
           dotnet test
+status-wait:
+  steps:
+    - IhorPetr/Building-Microservices
+        status_contexts: wercker/build,wercker/testUnit,wercker/testIntegration
+        timeout: 10
 deploy:  
   steps:
-    - script:
-        name: copy binary
-        cwd: StatlerWaldorfCorp.TeamService
-        code: |
-          cp -r . $WERCKER_OUTPUT_DIR/app
     - script:
         name: enable 
         code : |
