@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using MySql.Data.EntityFrameworkCore;
 using StatlerWaldorfCorp.LocationService.Models;
 
 namespace StatlerWaldorfCorp.LocationService.DatabaseInfrastructure
@@ -29,7 +28,7 @@ namespace StatlerWaldorfCorp.LocationService.DatabaseInfrastructure
         {
             var optionsBuilder = new DbContextOptionsBuilder<LocationDbContext>();
             var connectionString = Startup.Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
-            optionsBuilder.UseMySQL(connectionString);
+            optionsBuilder.UseMySql(connectionString);
             return new LocationDbContext(optionsBuilder.Options);
         }
     }

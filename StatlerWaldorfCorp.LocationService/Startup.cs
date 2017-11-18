@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MySql.Data.EntityFrameworkCore.Extensions;
 using StatlerWaldorfCorp.LocationService.DatabaseInfrastructure;
 using StatlerWaldorfCorp.LocationService.Persistence;
 using StatlerWaldorfCorp.LocationService.Repository;
@@ -32,8 +31,8 @@ namespace StatlerWaldorfCorp.LocationService
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
-            services.AddEntityFrameworkMySQL().AddDbContext<LocationDbContext>(option=>
-            option.UseMySQL(connectionString));
+            services.AddEntityFrameworkMySql().AddDbContext<LocationDbContext>(option=>
+            option.UseMySql(connectionString));
             services.AddScoped<ILocationRecordRepository, LocationRecordRepository>();
             services.AddMvc();
         }

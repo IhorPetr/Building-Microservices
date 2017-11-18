@@ -42,7 +42,7 @@ namespace StatlerWaldorfCorp.LocationService.Repository
 
         public LocationRecord Get(Guid memberId, Guid recordId)
         {
-            return this.db.LocationRecords.Single(Ir=> Ir.MemberID==memberId && Ir.ID==recordId);
+            return this.db.LocationRecords.SingleOrDefault(Ir=> Ir.MemberID==memberId && Ir.ID==recordId);
         }
 
         public LocationRecord GetLatestForMember(Guid memberId)
