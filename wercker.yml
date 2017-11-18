@@ -53,7 +53,7 @@ testIntegration:
           dotnet test
 status-wait:
   steps:
-   - IhorPetr/Building-Microservices
+   - maestrohealthcaretechnologies/wait-github-statuses
       status_contexts: wercker/build,wercker/testUnit,wercker/testIntegration
       timeout: 10
 deploy:  
