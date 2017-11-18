@@ -62,7 +62,7 @@ testIntegration:
         cwd: StatlerWaldorfCorp.LocationService.Integration     
         code: |      
           dotnet test
-Packaging
+Packaging:
   steps:
     - script:
         name: copy binary
