@@ -17,11 +17,6 @@ build:
         cwd: StatlerWaldorfCorp.LocationService        
         code: |          
           dotnet build    
-    - script:        
-        name: publish
-        cwd: StatlerWaldorfCorp.LocationService        
-        code: |          
-          dotnet publish -o publish
 testUnit:
   steps:
     - script:        
@@ -62,7 +57,12 @@ testIntegration:
         code: |      
           dotnet test
 Packaging:
-  steps:       
+  steps:
+    - script:        
+        name: publish
+        cwd: StatlerWaldorfCorp.LocationService        
+        code: |          
+          dotnet publish -o publish       
     - script:
         name: copy binary
         cwd: StatlerWaldorfCorp.LocationService
