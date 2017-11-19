@@ -37,6 +37,11 @@ testUnit:
 testIntegration:
   steps:
     - script:
+    - script:        
+        name: restore
+        cwd: StatlerWaldorfCorp.LocationService        
+        code: |          
+          dotnet restore 
         name: integration-migrate
         cwd: StatlerWaldorfCorp.LocationService
         code: |           
