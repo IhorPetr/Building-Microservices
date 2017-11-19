@@ -22,9 +22,8 @@ namespace StatlerWaldorfCorp.LocationService.Integration.Databases
                 .SetBasePath(System.IO.Directory.GetCurrentDirectory())
                 .AddEnvironmentVariables().Build();
 
-            var connectionString = config.GetConnectionString("Host=localhost;Port=3306;Database=locationservice;Username=root;Password=inteword");
             var optionsBuilder = new DbContextOptionsBuilder<LocationDbContext>();
-            optionsBuilder.UseMySql(connectionString);
+            optionsBuilder.UseMySql(config.GetSection("MYSQL__CSTR").Value);
             this.context = new LocationDbContext(optionsBuilder.Options);
             //context.Database.Migrate();
         }

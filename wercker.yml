@@ -21,10 +21,7 @@ build:
         name: integration-migrate
         cwd: StatlerWaldorfCorp.LocationService
         code: |
-           export TRANSIENT=false
-           export MYSQL__CSTR="Host=$MYSQL_PORT_3306_TCP_ADDR"
-           export MYSQL__CSTR="$MYSQL__CSTR;Username=root;Password=inteword;"
-           export MYSQL__CSTR="$MYSQL__CSTR;Port=$MYSQL_PORT_3306_TCP_PORT;Database=locationservice"        
+           setx MYSQL__CSTR "Host=$MYSQL_PORT_3306_TCP_ADDR;Username=root;Password=inteword;Port=$MYSQL_PORT_3306_TCP_PORT;Database=locationservice"     
            dotnet ef database update    
 testUnit:
   steps:
