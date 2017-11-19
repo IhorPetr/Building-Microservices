@@ -3,7 +3,6 @@ services:
    - id: mysql
      env:
        MYSQL_ROOT_PASSWORD: inteword 
-       MYSQL_USER: integrator 
        MYSQL_DATABASE: locationservice 
 no-response-timeout: 10 
 build:  
@@ -46,9 +45,6 @@ testIntegration:
         name: integration-migrate
         cwd: StatlerWaldorfCorp.LocationService
         code: |           
-           export MYSQL__CSTR="Host=$MYSQL_PORT_3306_TCP_ADDR"
-           export MYSQL__CSTR="$MYSQL__CSTR;Username=integrator;Password=inteword;"
-           export MYSQL__CSTR="$MYSQL__CSTR;Port=$MYSQL_PORT_3306_TCP_PORT;Database=locationservice"
            dotnet ef database update
     - script:    
         name: integration-test-restore    
