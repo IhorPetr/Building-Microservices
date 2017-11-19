@@ -3,7 +3,7 @@ services:
    - id: mysql
      env:
        MYSQL_ROOT_PASSWORD: inteword 
-       MYSQL_DATABASE: locationservice 
+       MYSQL_DATABASE: test_database
 no-response-timeout: 10 
 build:  
   steps:     
@@ -16,7 +16,12 @@ build:
         name: build
         cwd: StatlerWaldorfCorp.LocationService        
         code: |          
-          dotnet build    
+          dotnet build
+    - script:  
+        name: integration-migrate
+        cwd: StatlerWaldorfCorp.LocationService
+        code: |        
+           dotnet ef database update    
 testUnit:
   steps:
     - script:        
@@ -36,19 +41,6 @@ testUnit:
           dotnet test
 testIntegration:
   steps:
-    - script:      
-        name: restore
-        cwd: StatlerWaldorfCorp.LocationService        
-        code: |          
-          dotnet restore 
-    - script:  
-        name: integration-migrate
-        cwd: StatlerWaldorfCorp.LocationService
-        code: |
-           export MYSQL__CSTR="Host=$MYSQL_PORT_3306_TCP_ADDR"
-           export MYSQL__CSTR="$MYSQL__CSTR;Username=integrator;Password=inteword;"
-           export MYSQL__CSTR="$MYSQL__CSTR;Port=$MYSQL_PORT_3306_TCP_PORT;Database=locationservice"           
-           dotnet ef database update
     - script:    
         name: integration-test-restore    
         cwd: StatlerWaldorfCorp.LocationService.Integration    
