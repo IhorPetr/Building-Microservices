@@ -36,12 +36,12 @@ testUnit:
           dotnet test
 testIntegration:
   steps:
-    - script:
-    - script:        
+    - script:      
         name: restore
         cwd: StatlerWaldorfCorp.LocationService        
         code: |          
           dotnet restore 
+    - script:  
         name: integration-migrate
         cwd: StatlerWaldorfCorp.LocationService
         code: |           
