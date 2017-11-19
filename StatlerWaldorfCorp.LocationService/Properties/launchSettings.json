@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/StatlerWaldorfCorp.LocationService",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:53310/",
       "sslPort": 0
@@ -16,7 +20,7 @@
       }
     },
     "StatlerWaldorfCorp.LocationService": {
-      "commandName": "Project",
+      "commandName": "IIS",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

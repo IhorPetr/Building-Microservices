@@ -22,11 +22,7 @@ namespace StatlerWaldorfCorp.LocationService.Integration.Databases
                 .SetBasePath(System.IO.Directory.GetCurrentDirectory())
                 .AddEnvironmentVariables().Build();
 
-            var connectionString = $"Host={config.GetSection("MYSQL_PORT_3306_TCP_ADDR").Value};" +
-                                   $"Port={config.GetSection("MYSQL_PORT_3306_TCP_PORT").Value};" +
-                                   $"Database={config.GetSection("MYSQL_DATABASE").Value};" +
-                                   "Username=root;" +
-                                   $"Password={config.GetSection("MYSQL_ROOT_PASSWORD").Value}";
+            var connectionString = config.GetConnectionString("Mysql");
             var optionsBuilder = new DbContextOptionsBuilder<LocationDbContext>();
             optionsBuilder.UseMySql(connectionString);
             this.context = new LocationDbContext(optionsBuilder.Options);

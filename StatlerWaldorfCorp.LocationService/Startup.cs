@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -30,13 +31,7 @@ namespace StatlerWaldorfCorp.LocationService
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //var connectionString = Configuration.GetSection("MYSQL__CSTR").Value ??
-            //    Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
-            var connectionString = $"Host={Configuration.GetSection("MYSQL_PORT_3306_TCP_ADDR").Value};" +
-                                   $"Port={Configuration.GetSection("MYSQL_PORT_3306_TCP_PORT").Value};" +
-                                   $"Database={Configuration.GetSection("MYSQL_DATABASE").Value};" +
-                                   "Username=root;" +
-                                   $"Password={Configuration.GetSection("MYSQL_ROOT_PASSWORD").Value}";
+            var connectionString = Configuration.GetConnectionString("Mysql");
             services.AddEntityFrameworkMySql().AddDbContext<LocationDbContext>(option=>
             option.UseMySql(connectionString));
             services.AddScoped<ILocationRecordRepository, LocationRecordRepository>();
