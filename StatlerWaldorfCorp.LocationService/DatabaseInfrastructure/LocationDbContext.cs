@@ -27,8 +27,8 @@ namespace StatlerWaldorfCorp.LocationService.DatabaseInfrastructure
         public LocationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<LocationDbContext>();
-            var connectionString = Startup.Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
-            optionsBuilder.UseMySql(connectionString);
+           // var connectionString = Startup.Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
+            optionsBuilder.UseMySql("Host=localhost;Port=3306;Database=locationservice;Username=root;Password=inteword");
             return new LocationDbContext(optionsBuilder.Options);
         }
     }
