@@ -31,9 +31,10 @@ namespace StatlerWaldorfCorp.LocationService
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-           // var connectionString = Configuration.GetConnectionString("Mysql");
+            //var y = Environment.GetEnvironmentVariables();
+            // var connectionString = Configuration.GetConnectionString("Mysql");
             services.AddEntityFrameworkMySql().AddDbContext<LocationDbContext>(option=>
-            option.UseMySql("Host=localhost;Port=3306;Database=locationservice;Username=root;Password=inteword"));
+            option.UseMySql($"Host={Environment.GetEnvironmentVariable("MYSQL_PORT_3306_TCP_ADDR")};Port={Environment.GetEnvironmentVariable("MYSQL_PORT_3306_TCP_PORT")};Database=locationservice;Username=root;Password=inteword"));
             services.AddScoped<ILocationRecordRepository, LocationRecordRepository>();
             services.AddMvc();
         }
