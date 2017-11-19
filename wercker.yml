@@ -19,6 +19,9 @@ build:
         cwd: StatlerWaldorfCorp.LocationService        
         code: |          
           dotnet build
+    - script:
+        name: Create database
+        code: mysql -h$MYSQL_PORT_3306_TCP_ADDR -P$MYSQL_PORT_3306_TCP_PORT -uroot -p$MYSQL_ENV_MYSQL_ROOT_PASSWORD -e "CREATE DATABASE IF NOT EXISTS locationservice;"
     - script:  
         name: integration-migrate
         cwd: StatlerWaldorfCorp.LocationService
