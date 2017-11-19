@@ -33,7 +33,7 @@ namespace StatlerWaldorfCorp.LocationService
         {
             var connectionString = Configuration.GetConnectionString("Mysql");
             services.AddEntityFrameworkMySql().AddDbContext<LocationDbContext>(option=>
-            option.UseMySql(connectionString));
+            option.UseMySql("Host=localhost;Port=3306;Database=locationservice;Username=root;Password=inteword"));
             services.AddScoped<ILocationRecordRepository, LocationRecordRepository>();
             services.AddMvc();
         }
