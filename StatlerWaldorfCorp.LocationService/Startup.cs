@@ -30,7 +30,8 @@ namespace StatlerWaldorfCorp.LocationService
             // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
+            var connectionString = Configuration.GetSection("MYSQL__CSTR").Value ??
+                Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
             services.AddEntityFrameworkMySql().AddDbContext<LocationDbContext>(option=>
             option.UseMySql(connectionString));
             services.AddScoped<ILocationRecordRepository, LocationRecordRepository>();

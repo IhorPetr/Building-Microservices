@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "StatlerWaldorfCorp.LocationService.Integration": {
+      "commandName": "Project"
+    }
+  }
+}

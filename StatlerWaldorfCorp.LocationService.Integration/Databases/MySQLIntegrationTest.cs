@@ -17,12 +17,16 @@ namespace StatlerWaldorfCorp.LocationService.Integration.Databases
         private LocationDbContext context;
 
         public MySQLIntegrationTest()
-
         {
+            config = new ConfigurationBuilder()
+                .SetBasePath(System.IO.Directory.GetCurrentDirectory())
+                .AddEnvironmentVariables().Build();
+
+            var connectionString = config.GetSection("MYSQL__CSTR").Value;
             var optionsBuilder = new DbContextOptionsBuilder<LocationDbContext>();
-            optionsBuilder.UseMySql("Host=localhost;Port=5432;Database=locationservice;Username=integrator;Password=inteword");
+            optionsBuilder.UseMySql(connectionString);
             this.context = new LocationDbContext(optionsBuilder.Options);
-            context.Database.Migrate();
+            //context.Database.Migrate();
         }
         [Fact]
         public void ShouldPersistRecord()

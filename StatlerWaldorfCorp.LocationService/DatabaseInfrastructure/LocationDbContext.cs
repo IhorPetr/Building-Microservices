@@ -13,7 +13,7 @@ namespace StatlerWaldorfCorp.LocationService.DatabaseInfrastructure
     {
         public LocationDbContext(DbContextOptions<LocationDbContext> option) : base(option)
         {
-            
+            //this.Database.Migrate();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
