@@ -18,11 +18,6 @@ build:
         code: |          
           dotnet build
     - script:  
-        name: create-connectionStringDatabase
-        cwd: StatlerWaldorfCorp.LocationService
-        code: |
-           env MYSQL__CSTR="Host=$MYSQL_PORT_3306_TCP_ADDR;Username=root;Password=inteword;Port=$MYSQL_PORT_3306_TCP_PORT;Database=locationservice"
-    - script:  
         name: integration-migrate
         cwd: StatlerWaldorfCorp.LocationService
         code: |
